@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./jquery-3.6.0.min.js"></script>
+    <script src="./index.js"></script>
+    <link rel="stylesheet" href="./style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="float-container">
+
+    <div class="float-child1" id="contain">
+
+
+        <form >
+            <div class="form-group" >
+              <label for="name" >Name :</label>
+              <input type="text" class="form-control mb-2 mr-sm-2"  id="name" aria-describedby="nameHelp" placeholder="Enter Name">
+              <small id="nameHelp" class="form-text text-muted"></small>
+            </div>
+            <br>
+            <div class="form-group">
+              <label for="age">Age :</label>
+              <input type="text" class="form-control" id="age" placeholder="Enter your age">
+            </div>
+            <br>
+            
+            <div class="form-group">
+                <label for="city">City :</label>
+                <input type="text" class="form-control" id="city" placeholder="Enter name of your city">
+            </div>
+            
+               
+                <br>
+                <br>
+                <label class="radio-inline">
+                  <input type="radio" class="gender" name="radio" value="male" id="male">Male
+                </label>
+                <label class="radio-inline">
+                  <input type="radio" name="radio" class="gender" value="female" id="female">Female
+                </label>        
+              <br>
+
+              <div>
+                <button  id="addbtn" type="button" class="btn btn-outline-secondary">Add</button>
+                <button  id= "updatebtn" type="button" class="btn btn-outline-secondary">Update</button>
+                <button  id="resetbtn" type="button" class="btn btn-outline-secondary">Reset</button>
+                
+                
+
+   </div>
+           
+          </form>
+    </div>
+
+
+    <div class="float-child2" >
+        <table id="customers">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>City</th>
+                    <th>Gender</th>
+                    <th>Action</th>
+                  </tr>
+      
+            </thead>
+
+            <tbody id="tbody">
+                
+            </tbody>
+
+            </table>
+          
+        
+   </div>
+    </div>  
+</body>
+</html>

@@ -1,0 +1,66 @@
+#name {
+  margin-bottom: 15px;
+}
+
+.btn {
+  margin-bottom: 10px;
+  padding-bottom: 5px;
+  margin-right: 6px;
+}
+.float-container {
+  border: 3px solid #fff;
+  padding: 20px;
+}
+
+.float-child1 {
+  width: 35%;
+  padding: 20px;
+  border: 1px solid black;
+  background-color: aliceblue;
+  margin-right: 15cm;
+  margin-left: 2cm;
+  margin-top: 2cm;
+  font-weight: bolder;
+  font-family: "Times New Roman";
+  height: 6cm;
+}
+
+.float-child2 {
+  width: 100%;
+  padding: 20px;
+  margin-right: 15cm;
+  margin-left: 2cm;
+  margin-top: 2cm;
+  font-weight: bolder;
+  font-family: "Times New Roman";
+  height: 6cm;
+  float: left;
+}
+
+#customers {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td,
+#customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+#customers tr:hover {
+  background-color: #ddd;
+}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: black;
+  color: white;
+}
