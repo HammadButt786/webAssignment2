@@ -1,26 +1,33 @@
 $(function()
 {
-    $("#addbtn").click(addButton);
-   
+    $("#addbtn").click(addButton)
    
     $(document).ready(function(){
-        $("#resetbtn").click(Reset)
-      });
+        $("#resetbtn").click(Reset);
+   
 
 
-      $(".toRemove").click(function(){
-        $(this).parent().parent().remove();
-        if($('#tbody').html()== '' || $('#tbody').html()== null)
-        {
-            $('#resetbtn').prop('disabled',true);
-            $('#updatebtn').prop('disabled',true);
-            $('.radio').prop('checked',false);
-            $('#addbtn').prop('disabled',false);
-            name = $('#name').val('');
-            age = $('#age').val('');
-            city = $('#city').val('');
-        }
-     });
+    });
+
+    $(document).ready(function(){
+        $(".toRemove").click(function(){
+            $(this).parent().parent().remove();
+            if($('#tbody').html()== '' || $('#tbody').html()== null)
+            {
+                $('#resetbtn').prop('disabled',true);
+                $('#updatebtn').prop('disabled',true);
+                $('.radio').prop('checked',false);
+                $('#addbtn').prop('disabled',false);
+                name = $('#name').val('');
+                age = $('#age').val('');
+                city = $('#city').val('');
+            }
+         });
+    
+    
+    
+    });
+
 
        
 });
@@ -98,4 +105,8 @@ $('#name').val('');
 
 }
 
+function handleButtons(){
+    $('#_update').prop('disabled',true);
+    $('#_reset').prop('disabled',false);
+}
 
