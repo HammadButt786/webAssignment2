@@ -2,31 +2,15 @@ $(function()
 {
     $("#addbtn").click(addButton)
    
-    $(document).ready(function(){
         $("#resetbtn").click(Reset);
    
+        $(document).on("click",'.toRemove',function(){
 
-
-    });
-
-    $(document).ready(function(){
-        $(".toRemove").click(function(){
-            $(this).parent().parent().remove();
-            if($('#tbody').html()== '' || $('#tbody').html()== null)
-            {
-                $('#resetbtn').prop('disabled',true);
-                $('#updatebtn').prop('disabled',true);
-                $('.radio').prop('checked',false);
-                $('#addbtn').prop('disabled',false);
-                name = $('#name').val('');
-                age = $('#age').val('');
-                city = $('#city').val('');
-            }
+            $(this).closest('tr').remove(); 
          });
-    
-    
-    
-    });
+
+
+
 
 
        
