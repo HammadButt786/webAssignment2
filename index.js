@@ -5,47 +5,48 @@ $(function()
         $("#resetbtn").click(Reset);
    
         $(document).on("click",'.toRemove',Remove);
+      
 
-        $(document).on("click", ".toUpdate", function(){
-            var name = $(this).parents("tr").attr('data-name');
-            var age = $(this).parents("tr").attr('data-age');
-             var city = $(this).parents("tr").attr('data-city');
-            var gender = $(this).parents("tr").attr('data-gender');
-        
-            $(this).parents("tr").find("td:eq(0)").html('<input name="edit_name" value="'+name+'">');
-            $(this).parents("tr").find("td:eq(1)").html('<input name="edit_age" value="'+age+'">');
-            $(this).parents("tr").find("td:eq(2)").html('<input name="edit_city" value="'+city+'">');
-            $(this).parents("tr").find("td:eq(3)").html('<input name="edit_gender" value="'+gender+'">');
-        });
-
-        $(document).on("click", "#updatebtn", function(){
-            var name = $(this).parents("tr").find("input[name='edit_name']").val();
-            var age = $(this).parents("tr").find("input[name='edit_age']").val();
-            var city = $(this).parents("tr").find("input[name='edit_city']").val();
-            var gender = $(this).parents("tr").find("input[name='edit_gender']").val();
-         
+        $('.toUpdate').click(function(){
+            $('#updatebtn').prop('disabled',false);
+            $('#addbtn').prop('disabled',true);
+            $('#resetbtn').prop('disabled',false);
+            var tr =  $(this).parent().parent().children();
+            for(i=0;i<tr.length-1;i++)
+            {
+                 console.log(tr[i].innerText);
+            }
+            name = $('#name').val(tr[0].innerText);
+            age = $('#age').val(tr[1].innerText);
+            city = $('#city').val(tr[2].innerText);
+            $("input[name=radio][value=" + tr[3].innerText + "]").prop('checked', true);
             
-            $(this).parents("tr").find("td:eq(0)").text(name);
-            $(this).parents("tr").find("td:eq(1)").text(age);
-            $(this).parents("tr").find("td:eq(2)").text(city);
-            $(this).parents("tr").find("td:eq(3)").text(gender);
-         
-            $(this).parents("tr").attr('data-name', name);
-            $(this).parents("tr").attr('data-age', age);
-            $(this).parents("tr").attr('data-city', city);
-            $(this).parents("tr").attr('data-gender', gender);
+            $('#updatebtn').click(function(){
+                name = $('#name').val();
+                
+                age = $('#age').val();
+                city = $('#city').val();
+                gender = $('.radio:checked').val();
+                tr[0].innerText = name;
+            tr[1].innerText = age;
+            tr[2].innerText = city;
+            tr[3].innerText = gender;
+            name = $('#name').val('');
+            age = $('#age').val('');
+            city = $('#city').val('');
+            $('#updatebtn').prop('disabled',true);
+            $('#addbtn').prop('disabled',false);
+            $('.radio').prop('checked',false);
+                
+
         
-        
-            $(this).parents("tr").find(".toUpdate").show();
-            $(this).parents("tr").find("#updatebtn").remove();
-        });
-       
-
-
-
+  
 });
+        
+        });
 
 
+    });
 
 
 
@@ -118,18 +119,12 @@ function addButton(){
         insert('Please enter  age');
         return;
     }
-    $("#tbody").append("<tr id= 'rowData'><td > "+ name +" </td><td> "+age+" </td><td> "+city+" </td> <td> "+gender+" </td><td><a href= '#' class='toUpdate'>Update</a>&nbsp; / &nbsp; <a href='#' class='toRemove'>Remove</a></td></tr>");
+    $("#tbody").append("<tr id= 'rowData'   ><td > "+ name +" </td><td> "+age+" </td><td> "+city+" </td> <td> "+gender+" </td><td><a href= '#'  class='toUpdate' data-id= '+id+'>Update</a>&nbsp; / &nbsp; <a href='#' class='toRemove'>Remove</a></td></tr>");
 
-$('#name').val('');
+ $('#name').val('');
     $('#age').val('');
     $('#city').val('');
     $('.radio').prop('checked',false);
-    handleButtons();
+
 
 }
-
-function handleButtons(){
-    $('#_update').prop('disabled',true);
-    $('#_reset').prop('disabled',false);
-}
-
