@@ -116,11 +116,11 @@ function addButton() {
     $('#age').val('');
     $('#city').val('');
     $('.gender').prop('checked', false);
-    handleButtons();
+    //handleButtons();
    // $('.toUpdate').click(Update);
 }
    
-function handleButtons(){
+/*function handleButtons(){
     $('#updatebtn').prop('disabled',true);
     $('#resetbtn').prop('disabled',false);
 }
